@@ -1,12 +1,5 @@
 /* Fonts */
 @font-face {
-  font-family: 'circular-std-book';
-  src: url('/assets/fonts/CircularStd-Book.woff2') format('woff2'),
-       url('/assets/fonts/CircularStd-Book.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: 'circular-std-bold';
   src: url('/assets/fonts/CircularStd-Bold.woff2') format('woff2'),
        url('/assets/fonts/CircularStd-Bold.woff') format('woff');
@@ -14,12 +7,12 @@
   font-style: normal;
 }
 
-%font-book {
-  font-family: 'circular-std-book';
+%font-times {
+  font-family: 'times';
   font-weight: 400;
 }
 
-%font-bold {
+%font-circular {
   font-family: 'circular-std-bold';
   font-weight: 700;
 }
@@ -33,8 +26,19 @@ $desktop-large: "min-width: 1800px";
 
 /* Colors */
 $white: #fff;
+$black: #000;
+$green: #00EBB4;
 
 body {
-  @extend %font-book;
+  @extend %font-circular;
   background: $white;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+a {
+  color: $black;
+  &:hover {
+    color: $green;
+  }
 }

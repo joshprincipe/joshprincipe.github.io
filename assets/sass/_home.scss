@@ -1,0 +1,172 @@
+header {
+  background-color: $green;
+  nav {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding-left: 20px;
+    padding-right: 20px;
+    .logo {
+      color: $white;
+    }
+    .nav-links {
+      margin-left: auto;
+      justify-content: flex-end;
+      a {
+        color: $white;
+        &:first-child {
+          margin-right: 18px;
+        }
+      }
+    }
+  }
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  height: 530px;
+  justify-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  span {
+    color: $green;
+    margin-bottom: 20px;
+  }
+  h1 {
+    @extend %font-times;
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
+.who {
+  background-color: $black;
+  padding: 60px 30px;
+  span {
+    color: $green;
+  }
+  p {
+    @extend %font-times;
+    color: $white;
+    font-size: 20px;
+    line-height: 32px;
+    margin: 30px 0 20px;
+  }
+  ul {
+    li {
+      color: $green;
+      font-size: 16px;
+      line-height: 30px;
+    }
+  }
+}
+
+.work {
+  .hero {
+    width: 100%;
+    height: 440px;
+  }
+  .projects {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 5px;
+    a {
+      margin: 10px 5px 0;
+      height: 300px;
+      padding: 0 15px;
+    }
+  }
+  a {
+    background-color: $green;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    transition: top .25s ease;
+    top: 0;
+    &:hover {
+      box-shadow: 0 10px 20px 0 rgba(0,0,0,0.18);
+      top: -5px;
+    }
+    &.onyx {
+      width: 100%;
+      height: 440px;
+    }
+    span {
+      color: $white;
+      line-height: 23px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+}
+
+.relationships {
+  padding: 70px 0 80px;
+  text-align: center;
+  span {
+    color: $green;
+    display: block;
+    margin-bottom: 30px;
+  }
+  ul {
+    li {
+      @extend %font-times;
+      font-size: 26px;
+      line-height: 40px;
+    }
+  }
+}
+
+.video {
+  background-color: $green;
+  width: 100%;
+  height: 220px;
+}
+
+.contact {
+  text-align: right;
+  padding: 50px 70px 40px;
+  .section-title {
+    color: $green;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .contact-info {
+    color: $black;
+    line-height: 30px;
+  }
+  ul {
+    margin-top: 20px;
+    li {
+      a {
+        @extend %font-times;
+        font-size: 20px;
+        line-height: 32px;
+      }
+    }
+  }
+}
+
+.send-message {
+  padding: 0 10px 20px;
+  a {
+    background-color: $green;
+    color: $white;
+    height: 110px;
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: top .25s ease;
+    top: 0;
+    &:hover {
+      box-shadow: 0 10px 20px 0 rgba(0,0,0,0.18);
+      top: -10px;
+    }
+  }
+}
