@@ -1,11 +1,30 @@
 header {
   background-color: $green;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  transition: transform .3s ease;
+  z-index: 999;
+  &.scrolled {
+    position: fixed;
+    opacity: 1;
+    visibility: visible;
+  }
+  &.reveal {
+    transform: translateY(0);
+  }
   nav {
     display: flex;
     align-items: center;
     height: 56px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
+    @media ($tablet) {
+      padding: 0 30px;
+    }
     .logo {
       color: $white;
     }
@@ -27,8 +46,13 @@ header {
   flex-direction: column;
   height: 530px;
   justify-content: center;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 0 40px;
+  max-width: 720px;
+  margin: auto;
+  @media ($tablet) {
+    padding: 0;
+    height: 100vh;
+  }
   span {
     color: $green;
     margin-bottom: 20px;
@@ -37,32 +61,61 @@ header {
     @extend %font-times;
     font-size: 36px;
     line-height: 40px;
+    @media ($tablet) {
+      font-size: 64px;
+      line-height: 70px;
+    }
   }
 }
 
 .who {
   background-color: $black;
   padding: 60px 30px;
-  span {
-    color: $green;
+  @media ($tablet) {
+    padding: 150px 0;
   }
-  p {
-    @extend %font-times;
-    color: $white;
-    font-size: 20px;
-    line-height: 32px;
-    margin: 30px 0 20px;
-  }
-  ul {
-    li {
+  > div {
+    max-width: 780px;
+    margin: auto;
+    span {
       color: $green;
-      font-size: 16px;
-      line-height: 30px;
+    }
+    p {
+      @extend %font-times;
+      color: $white;
+      font-size: 20px;
+      line-height: 32px;
+      margin: 30px 0 20px;
+      @media ($tablet) {
+        font-size: 28px;
+        line-height: 40px;
+        margin: 40px 0;
+      }
+    }
+    ul {
+      @media ($mobile) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      li {
+        color: $green;
+        font-size: 16px;
+        line-height: 30px;
+        @media ($mobile) {
+          font-size: 18px;
+          width: 33%;
+        }
+      }
     }
   }
 }
 
 .work {
+  max-width: 940px;
+  margin: auto;
+  @media ($tablet) {
+    margin: 100px auto 0;
+  }
   .hero {
     width: 100%;
     height: 440px;
@@ -71,10 +124,27 @@ header {
     display: flex;
     justify-content: space-around;
     padding: 0 5px;
+    @media ($tablet-large) {
+      padding: 0;
+    }
     a {
       margin: 10px 5px 0;
       height: 300px;
       padding: 0 15px;
+      width: 100%;
+      @media ($tablet-large) {
+        margin: 20px 0 0 20px;
+        height: 370px;
+        &:first-child {
+          margin: 20px 0 0;
+        }
+      }
+      &:last-child {
+        display: none;
+        @media ($tablet) {
+          display: flex;
+        }
+      }
     }
   }
   a {
@@ -88,6 +158,9 @@ header {
     &:hover {
       box-shadow: 0 10px 20px 0 rgba(0,0,0,0.18);
       top: -5px;
+      @media ($tablet) {
+        top: -10px;
+      }
     }
     &.onyx {
       width: 100%;
@@ -105,6 +178,9 @@ header {
 .relationships {
   padding: 70px 0 80px;
   text-align: center;
+  @media ($tablet) {
+    padding: 120px 0;
+  }
   span {
     color: $green;
     display: block;
@@ -115,6 +191,10 @@ header {
       @extend %font-times;
       font-size: 26px;
       line-height: 40px;
+      @media ($tablet) {
+        font-size: 36px;
+        line-height: 60px;
+      }
     }
   }
 }
@@ -122,28 +202,57 @@ header {
 .video {
   background-color: $green;
   width: 100%;
+  max-width: 940px;
+  margin: auto;
   height: 220px;
+  @media ($tablet) {
+    height: 540px;
+  }
 }
 
 .contact {
   text-align: right;
   padding: 50px 70px 40px;
+  max-width: 940px;
+  margin: auto;
+  @media ($tablet) {
+    padding: 120px 0 100px;
+    display: flex;
+    justify-content: flex-end;
+  }
   .section-title {
     color: $green;
     display: block;
     margin-bottom: 20px;
+    @media ($tablet) {
+      width: 25%;
+    }
+  }
+  .contact-info-container {
+    @media ($tablet) {
+      width: 25%;
+    }
   }
   .contact-info {
     color: $black;
+    display: block;
     line-height: 30px;
   }
   ul {
     margin-top: 20px;
+    @media ($tablet) {
+      width: 25%;
+      margin-top: 0;
+    }
     li {
       a {
         @extend %font-times;
         font-size: 20px;
         line-height: 32px;
+        @media ($tablet) {
+          font-size: 28px;
+          line-height: 50px;
+        }
       }
     }
   }
@@ -151,6 +260,9 @@ header {
 
 .send-message {
   padding: 0 10px 20px;
+  @media ($tablet) {
+    padding: 0 0 60px;
+  }
   a {
     background-color: $green;
     color: $white;
