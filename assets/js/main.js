@@ -24,7 +24,7 @@ $(function() {
     stringsElement: $('.intro h1'),
     cursorChar: '<div class="cursor"></div>',
     startDelay: 750,
-    callback: function() {
+    preStringTyped: function() {
       $('.typed-cursor').addClass('finished')
     }
   });
