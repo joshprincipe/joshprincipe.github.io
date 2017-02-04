@@ -53,17 +53,39 @@ header {
     padding: 0;
     height: 100vh;
   }
-  span {
+  .subtitle {
     color: $green;
     margin-bottom: 20px;
   }
   h1 {
+    // @extend %font-times;
+    // font-size: 36px;
+    // line-height: 40px;
+    visibility: hidden;
+    // @media ($tablet) {
+    //   font-size: 64px;
+    //   line-height: 70px;
+    // }
+  }
+  .typed {
     @extend %font-times;
+    color: $black;
     font-size: 36px;
     line-height: 40px;
     @media ($tablet) {
       font-size: 64px;
       line-height: 70px;
+    }
+  }
+  .typed-cursor {
+    .cursor {
+      background-color: $green;
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+    }
+    &.finished {
+      margin-left: 20px;
     }
   }
 }
@@ -234,7 +256,6 @@ header {
     }
   }
   .contact-info {
-    color: $black;
     display: block;
     line-height: 30px;
   }

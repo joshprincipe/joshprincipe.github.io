@@ -14,7 +14,7 @@ var sass = require('gulp-sass'),
 // Paths
 var paths = {
   scss: 'assets/sass/**/*.scss',
-  scripts: 'assets/js/main.js',
+  scripts: ['assets/js/typed.js', 'assets/js/main.js'],
   images: 'assets/img/**',
   html: 'index.html'
 };
