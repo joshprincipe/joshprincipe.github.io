@@ -36,6 +36,22 @@ header {
         &:first-child {
           margin-right: 18px;
         }
+        &:hover {
+          border-bottom: 1px solid $white;
+        }
+        img {
+          position: relative;
+          top: 4px;
+          @media ($tablet) {
+            display: none;
+          }
+        }
+        span {
+          display: none;
+          @media ($tablet) {
+            display: inline;
+          }
+        }
       }
     }
   }
@@ -58,14 +74,7 @@ header {
     margin-bottom: 20px;
   }
   h1 {
-    // @extend %font-times;
-    // font-size: 36px;
-    // line-height: 40px;
     visibility: hidden;
-    // @media ($tablet) {
-    //   font-size: 64px;
-    //   line-height: 70px;
-    // }
   }
   .typed {
     @extend %font-times;
@@ -217,6 +226,9 @@ header {
         font-size: 36px;
         line-height: 60px;
       }
+      a:hover {
+        border-bottom: 1px dashed $green;
+      }
     }
   }
 }
@@ -273,6 +285,9 @@ header {
         @media ($tablet) {
           font-size: 28px;
           line-height: 50px;
+        }
+        &:hover {
+          border-bottom: 1px dashed $green;
         }
       }
     }
