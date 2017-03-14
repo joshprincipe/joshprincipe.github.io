@@ -101,7 +101,14 @@ header {
 
 .who {
   background-color: $black;
+  opacity: 0;
+  visibility: hidden;
   padding: 60px 30px;
+  transition: all 1s linear;
+  &.scrolled {
+    opacity: 1;
+    visibility: visible;
+  }
   @media ($tablet) {
     padding: 150px 0;
   }

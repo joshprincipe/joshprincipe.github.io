@@ -7,6 +7,7 @@ $(function() {
     var y = (document.documentElement && document.documentElement.scrollTop) ||
         document.body.scrollTop;
 
+    // header
     if (y > 0) {
       header.classList.add('scrolled');
     } else {
@@ -17,6 +18,10 @@ $(function() {
       header.classList.add('reveal');
     } else {
       header.classList.remove('reveal');
+    }
+
+    if (y >= $('.who').offset().top - ($('.who').height() / 2)) {
+      $('.who').addClass('scrolled');
     }
   }
 
